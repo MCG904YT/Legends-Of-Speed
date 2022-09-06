@@ -1,0 +1,209 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local label = Instance.new("TextLabel")
+local UICorner = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+local steps = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local gems = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local afk = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local destroy = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local stopgems = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+local stopsteps = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+main.Name = "main"
+main.Parent = ScreenGui
+main.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+main.Position = UDim2.new(0.559496582, 0, 0.49848491, 0)
+main.Size = UDim2.new(0, 291, 0, 211)
+main.Active = true
+main.Draggable = true
+
+label.Name = "label"
+label.Parent = main
+label.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+label.BorderColor3 = Color3.fromRGB(0, 0, 0)
+label.Size = UDim2.new(0, 291, 0, 50)
+label.Font = Enum.Font.PatrickHand
+label.Text = "Legends Of Speed"
+label.TextColor3 = Color3.fromRGB(0, 0, 0)
+label.TextSize = 45.000
+label.TextWrapped = true
+
+UICorner.CornerRadius = UDim.new(0, 9)
+UICorner.Parent = label
+
+UICorner_2.CornerRadius = UDim.new(0, 9)
+UICorner_2.Parent = main
+
+steps.Name = "steps"
+steps.Parent = main
+steps.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+steps.BorderColor3 = Color3.fromRGB(0, 0, 0)
+steps.Position = UDim2.new(0.0584192425, 0, 0.356013834, 0)
+steps.Size = UDim2.new(0, 107, 0, 39)
+steps.Font = Enum.Font.PatrickHand
+steps.Text = "Auto-Farm Steps"
+steps.TextColor3 = Color3.fromRGB(0, 0, 0)
+steps.TextSize = 20.000
+steps.MouseButton1Down:connect(function()
+	steps.Visible = false
+	stopsteps.Visible = true
+	
+	local A = true
+
+	while(A == true) do
+		wait(20) --(important) keep the wait at 20 to avoid crashing!!! the steps will fire every 20 seconds
+		for i=1, 35000 do
+			local A_1 = "collectOrb"
+			local A_2 = "Red Orb"
+			local A_3 = "City"
+			local Event = game:GetService("ReplicatedStorage").rEvents.orbEvent
+			Event:FireServer(A_1, A_2, A_3)
+		end
+	end
+end)
+
+UICorner_3.CornerRadius = UDim.new(0, 9)
+UICorner_3.Parent = steps
+
+gems.Name = "gems"
+gems.Parent = main
+gems.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+gems.BorderColor3 = Color3.fromRGB(0, 0, 0)
+gems.Position = UDim2.new(0.573883176, 0, 0.356013834, 0)
+gems.Size = UDim2.new(0, 107, 0, 39)
+gems.Font = Enum.Font.PatrickHand
+gems.Text = "Auto-Farm Gems"
+gems.TextColor3 = Color3.fromRGB(0, 0, 0)
+gems.TextSize = 20.000
+gems.MouseButton1Down:connect(function()
+	gems.Visible = false
+	stopgems.Visible = true
+	
+	local B = true
+	
+	while(B == true) do
+		wait(4)  --changing the wait() may cause errors or crashes.
+		for i=1, 15000 do
+			local A_1 = "collectOrb"
+			local A_2 = "Gem"
+			local A_3 = "City"
+			local Event = game:GetService("ReplicatedStorage").rEvents.orbEvent
+			Event:FireServer(A_1, A_2, A_3)
+		end
+	end
+end)
+
+UICorner_4.CornerRadius = UDim.new(0, 9)
+UICorner_4.Parent = gems
+
+afk.Name = "afk"
+afk.Parent = main
+afk.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+afk.BorderColor3 = Color3.fromRGB(0, 0, 0)
+afk.Position = UDim2.new(0.0584192425, 0, 0.654592037, 0)
+afk.Size = UDim2.new(0, 107, 0, 39)
+afk.Font = Enum.Font.PatrickHand
+afk.Text = "Anti-AFK"
+afk.TextColor3 = Color3.fromRGB(0, 0, 0)
+afk.TextSize = 20.000
+afk.MouseButton1Down:connect(function()
+	wait(0.5)local ba=Instance.new("ScreenGui")
+	local ca=Instance.new("TextLabel")local da=Instance.new("Frame")
+	local _b=Instance.new("TextLabel")local ab=Instance.new("TextLabel")ba.Parent=game.CoreGui
+	ba.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;ca.Parent=ba;ca.Active=true
+	ca.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ca.Draggable=true
+	ca.Position=UDim2.new(0.698610067,0,0.098096624,0)ca.Size=UDim2.new(0,304,0,52)
+	ca.Font=Enum.Font.SourceSansSemibold;ca.Text="Anti Afk Kick Script"ca.TextColor3=Color3.new(0,1,1)
+	ca.TextSize=22;da.Parent=ca
+	da.BackgroundColor3=Color3.new(0.196078,0.196078,0.196078)da.Position=UDim2.new(0,0,1.0192306,0)
+	da.Size=UDim2.new(0,304,0,107)_b.Parent=da
+	_b.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)_b.Position=UDim2.new(0,0,0.800455689,0)
+	_b.Size=UDim2.new(0,304,0,21)_b.Font=Enum.Font.Arial;_b.Text="Made by XxSwordmaster_2xX"
+	_b.TextColor3=Color3.new(1,1,1)_b.TextSize=20;ab.Parent=da
+	ab.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ab.Position=UDim2.new(0,0,0.158377379,0)
+	ab.Size=UDim2.new(0,304,0,44)ab.Font=Enum.Font.ArialBold;ab.Text="Status: Script Started"
+	ab.TextColor3=Color3.new(1,1,1)ab.TextSize=20;local bb=game:service'VirtualUser'
+	game:service'Players'.LocalPlayer.Idled:connect(function()
+		bb:CaptureController()bb:ClickButton2(Vector2.new())
+		ab.Text="You went idle and ROBLOX tried to kick you but we reflected it!"wait(2)ab.Text="Script Re-Enabled"end)
+end)
+
+UICorner_5.CornerRadius = UDim.new(0, 9)
+UICorner_5.Parent = afk
+
+destroy.Name = "destroy"
+destroy.Parent = main
+destroy.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+destroy.BorderColor3 = Color3.fromRGB(0, 0, 0)
+destroy.Position = UDim2.new(0.573883116, 0, 0.654592037, 0)
+destroy.Size = UDim2.new(0, 107, 0, 39)
+destroy.Font = Enum.Font.PatrickHand
+destroy.Text = "Destroy GUI"
+destroy.TextColor3 = Color3.fromRGB(0, 0, 0)
+destroy.TextSize = 20.000
+destroy.MouseButton1Down:connect(function()
+	main.Visible = false
+end)
+
+UICorner_6.CornerRadius = UDim.new(0, 9)
+UICorner_6.Parent = destroy
+
+stopgems.Name = "stopgems"
+stopgems.Parent = main
+stopgems.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+stopgems.BorderColor3 = Color3.fromRGB(0, 0, 0)
+stopgems.Position = UDim2.new(0.573883116, 0, 0.356013834, 0)
+stopgems.Size = UDim2.new(0, 107, 0, 39)
+stopgems.Visible = false
+stopgems.Font = Enum.Font.PatrickHand
+stopgems.Text = "Stop-Farming Gems"
+stopgems.TextColor3 = Color3.fromRGB(0, 0, 0)
+stopgems.TextSize = 18.000
+stopgems.MouseButton1Down:connect(function()
+	stopgems.Visible = false
+	gems.Visible = true
+	
+	B = false
+end)
+
+UICorner_7.CornerRadius = UDim.new(0, 9)
+UICorner_7.Parent = stopgems
+
+stopsteps.Name = "stopsteps"
+stopsteps.Parent = main
+stopsteps.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+stopsteps.BorderColor3 = Color3.fromRGB(0, 0, 0)
+stopsteps.Position = UDim2.new(0.0584192425, 0, 0.356013834, 0)
+stopsteps.Size = UDim2.new(0, 107, 0, 39)
+stopsteps.Visible = false
+stopsteps.Font = Enum.Font.PatrickHand
+stopsteps.Text = "Stop-Farming Steps"
+stopsteps.TextColor3 = Color3.fromRGB(0, 0, 0)
+stopsteps.TextSize = 18.000
+stopsteps.MouseButton1Down:connect(function()
+	stopsteps.Visible = false
+	steps.Visible = true
+	
+	A = false
+end)
+
+UICorner_8.CornerRadius = UDim.new(0, 9)
+UICorner_8.Parent = stopsteps
